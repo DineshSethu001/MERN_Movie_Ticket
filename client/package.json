@@ -18,6 +18,7 @@
     "react-hot-toast": "^2.5.2",
     "react-player": "^2.16.0",
     "react-router-dom": "^7.6.2",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
@@ -29,6 +30,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "path": "^0.12.7",
     "vite": "^6.3.5"
   }
 }

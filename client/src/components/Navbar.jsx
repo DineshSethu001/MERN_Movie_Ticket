@@ -2,6 +2,7 @@ import { MenuIcon, SearchIcon, TicketPlus, User, XIcon } from "lucide-react"
 import {assets} from "../assets/assets"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
+
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
