@@ -6,14 +6,14 @@ export const inngest = new Inngest({ id: "movie-ticket-bookings" });
 
 // Step 2: Function to sync created users
 const syncUserCreation = inngest.createFunction(
-  { id: "sync-user-create" }, // ✅ unique ID
+  { id: "sync-user-from-clerk" }, // ✅ unique ID
   { event: "clerk/user.created" },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
 
     const userData = {
       _id: id,
-      email: email_addresses[0]?.email_address,
+      email: email_addresses[0].email_address,
       name: `${first_name} ${last_name}`,
       image: image_url,
     };
@@ -24,7 +24,7 @@ const syncUserCreation = inngest.createFunction(
 
 // Step 3: Function to delete users
 const syncUserDeletion = inngest.createFunction(
-  { id: "sync-user-delete" }, // ✅ unique ID
+  { id: "delete-user-with-clerk" }, // ✅ unique ID
   { event: "clerk/user.deleted" },
   async ({ event }) => {
     const { id } = event.data;
@@ -35,7 +35,7 @@ const syncUserDeletion = inngest.createFunction(
 
 // Step 4: Function to update users
 const syncUserUpdation = inngest.createFunction(
-  { id: "sync-user-update" }, // ✅ unique ID
+  { id: "update-user-from-clerk" }, // ✅ unique ID
   { event: "clerk/user.updated" }, // 🔁 also updated event type
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
